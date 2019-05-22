@@ -1,2 +1,2 @@
-# init
-Initial Project
+# Data Pendaftaran Mahasiswa
+Tugas Akhir
