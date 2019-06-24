@@ -36,6 +36,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/mahasiswas') }}">Admin</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/mhs') }}">Data</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

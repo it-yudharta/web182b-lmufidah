@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mahasiswa;
+use App\Daftar;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class DaftarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mahasiswas = Mahasiswa::paginate(10);
+        $mahasiswas = Daftar::paginate(10);
 
-        return view('mahasiswa.index', ['mahasiswas' => $mahasiswas]);
+        return view('daftar.index', ['daftars' => $mahasiswas]);
     }
 
     /**
@@ -26,7 +26,7 @@ class MahasiswaController extends Controller
      */
     public function tambah()
     {
-        return view('mahasiswa.tambah');
+        return view('daftar.tambah');
     }
 
     /**
@@ -37,22 +37,22 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        $tambah = new Mahasiswa;
-        $tambah->name = $request['nama'];
+        $tambah = new Daftar;
+        $tambah->nama = $request['nama'];
         $tambah->address = $request['alamat'];
         $tambah->age = $request['umur'];
         $tambah->save();
 
-        return redirect('/mahasiswas');
+        return redirect('/mhs');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mahasiswa  $mahasiswa
+     * @param  \App\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function show(Mahasiswa $mahasiswa)
+    public function show(Daftar $daftar)
     {
         //
     }
@@ -60,44 +60,34 @@ class MahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mahasiswa  $mahasiswa
+     * @param  \App\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Daftar $daftar)
     {
-        $edit = Mahasiswa::find($id);
-        return view('mahasiswa.edit', ['mahasiswas' =>$edit]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mahasiswa  $mahasiswa
+     * @param  \App\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Daftar $daftar)
     {
-        $edit = Mahasiswa::find($id);
-        $edit->name = $request['nama'];
-        $edit->address = $request['alamat'];
-        $edit->age = $request['umur'];
-        $edit->update();
-
-        return redirect('/mahasiswas');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mahasiswa  $mahasiswa
+     * @param  \App\Daftar  $daftar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(id $id)
+    public function destroy(Daftar $daftar)
     {
-        $hapus = Mahasiswa::where('id', $id);
-        $hapus->delete();
-
-        return redirect('/mahasiswas');
+        //
     }
 }
