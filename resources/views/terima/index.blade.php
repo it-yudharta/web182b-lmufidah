@@ -5,9 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Selamat Datang
-                    <a class="btn btn-primary btn-sm float-right" href="/mhs/tambah">Tambah Data</a>
-                </div>
+                <div class="card-header">Selamat Datang</div>
                 <div class="card-body">
                    
                 <table class="table">
@@ -19,13 +17,13 @@
                         <th scope="col">Umur</th>
                         </tr>
                     </thead>
-                        @foreach ($daftars as $mhs)
+                        @foreach ($terimas as $data)
                     <tbody>
                         <tr>
-                        <td>{{$mhs->id}}</td>
-                        <td>{{$mhs->nama}}</td>
-                        <td>{{$mhs->address}}</td>
-                        <td>{{$mhs->age}}</td>
+                        <td>{{$data->id}}</td>
+                        <td>{{$data->name}}</td>
+                        <td>{{$data->address}}</td>
+                        <td>{{$data->age}}</td>
                         </tr>
                         @endforeach
                     </tbody>

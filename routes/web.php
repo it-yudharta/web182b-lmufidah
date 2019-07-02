@@ -29,3 +29,5 @@ Route::get('/mahasiswas/{id}/hapus', 'MahasiswaController@destroy');
 Route::get('/mhs', 'DaftarController@index');
 Route::get('/mhs/tambah', 'DaftarController@tambah');
 Route::get('/mhs/store', 'DaftarController@store');
+
+Route::get('/data', 'TerimaController@index');
